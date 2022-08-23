@@ -7,14 +7,11 @@ function draw() {
 	background(90,190,230);
 // ground
 	// ground height is customisable through the variable groundY
-	// the ground is created by spawning a rectangle always touching the bottom of the canvas
 	let groundY = 150
 	fill(120,230,70);
 	noStroke()
 	rect(0, height - groundY, width, groundY);
-//flower 1
 	createFlower(width / 2, height - 20, 200, 0, 50, 15);
-//flower2
 	createFlower(width / 4, height - 30, 150, 0, 35, 5);
 }
 
@@ -39,7 +36,6 @@ function createFlower(x, y, h, n, s, w) {
 	rect(x + (w / 2), y - h, w, h);
 
 	//create petals around flower
-	//stroke(red(c) - b, green(c) - b, blue(c) - b);
 	stroke(strokeColour(p));
 	fill(p);
 	//this isnt going to scale well for other flowers
