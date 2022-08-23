@@ -1,5 +1,10 @@
+//global vars
+let colourPicker;
+
 function setup() {
 	createCanvas(800,600);
+	colourPicker = createColorPicker('#c85afa');
+	colourPicker.position(0, height + 5);
 }
 
 function draw() {
@@ -27,7 +32,8 @@ function createFlower(x, y, h, n, s, w) {
 // p is the main colour of the petals
 // c is the main colour of the centre
 	let o = (s / 2);
-	let p = color(200, 90, 250);
+	//let p = color(200, 90, 250);
+	let p = color(colourPicker.color());
 	let c = color(210, 200, 70);
 	//create stem with color #5AAF34
 	strokeWeight(2);
