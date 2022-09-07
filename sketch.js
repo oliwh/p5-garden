@@ -1,8 +1,10 @@
 // global vars
 let colourPicker;
+let flowerNum = 0;
+let groundY = 150
 
 function setup() {
-	frameRate(12);
+	frameRate(30);
 
 	createCanvas(800,600);
 	
@@ -11,7 +13,6 @@ function setup() {
 
 	background(90, 190, 230);
 // ground
-	let groundY = 150
 	fill(120,230,70);
 	noStroke()
 	rect(0, height - groundY, width, groundY);
@@ -22,7 +23,7 @@ function draw() {
 
 // double click to place flower
 function doubleClicked() {
-	createFlower(mouseX, mouseY, 150, 0, 35, 5);
+	createFlower(mouseX, height - groundY + 50, 150, 0, 35, 5);
 }
 
 function createFlower(x, y, h, n, s, w) {
@@ -39,7 +40,7 @@ function createFlower(x, y, h, n, s, w) {
 // p is the main colour of the petals
 // c is the main colour of the centre
 
-	let o = (s / 2);
+	let o = s / 2;
 	let p = color(colourPicker.color());
 	let c = color(210, 200, 70);
 	// create stem with color #5AAF34
