@@ -7,13 +7,14 @@ function setup() {
 }
 
 function draw() {
+	let gY = 150;
 // Background
 	noStroke();
 	fill(90, 190, 230);
-	rect(0, 0, 800, 600);
+	rect(0, 0, width, 600);
 // Ground
 	fill(100, 200, 70);
-	rect(0, Height - 150, 800, 150);
+	rect(0, Height - gY, width, gY);
 // Border
 	fill(0);
 	rect(0, Height, 800, 4);
