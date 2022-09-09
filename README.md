@@ -2,11 +2,15 @@
 
 My garden animation project written in p5.js
 
+## Current Features
 
+Currently you can change the colour of each different part of the background. This will not be permanent and is for testing only
 
+## Planned Features
 
-# How to use
+These features are subject to change and not all will make it to the final product
 
-To place a flower, click where you want the base of the flower to be. (mouse position only affects the X axis)
-If you want to set the colour of the flower, use the colour picker at the bottom and then place the flower.
-*Note: currently the colour of a flower cannot be changed once it is placed*
+ - Fully complete animation of a garden
+ - Ability to change time
+ - Ability to change seasons
+ - Ability to change weather
