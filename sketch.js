@@ -45,6 +45,13 @@ function setup() {
 	// Description
 	textSize(16);
 	text('Tree', r2 + 70, Height + 32);
+// Pond colour picker
+	pondColPic = createColorPicker('#adfed6');
+	pondColPic.position(r2, Height + 50);
+	// Description
+	textSize(16);
+	text('Pond', r2 + 70, Height + 70);
+
 }
 
 function draw() {
@@ -84,6 +91,14 @@ function draw() {
 	fill(hedgeColPic.color());
 	rect(0, Height - gY - hY, width, hY);
 
+// Pond
+	push();
+	fill(pondColPic.color());
+	angleMode(DEGREES);
+	rotate(-3);
+	ellipse(230, Height - 50, 400, 110);
+	pop();
+	
 // Border
 	fill(0);
 	rect(0, Height, width, 4);
