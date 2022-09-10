@@ -1,11 +1,13 @@
 // Global variables
 let Height = 400;
+let cX = 0;
 
 function setup() {
+	frameRate(30);
 	createCanvas(700, 600);
 	background(255);
-let r1 = 0;
-let r2 = 150;
+	let r1 = 0;
+	let r2 = 150;
 
 /* === Colour Pickers === */
 
@@ -52,6 +54,18 @@ function draw() {
 	fill(skyColPic.color());
 	rect(0, 0, width, Height);
 
+// Clouds
+	spawnCloud(50, 1)
+	spawnCloud(100, 2);
+	spawnCloud(40, 3);
+	spawnCloud(50, 4);
+	spawnCloud(100, 5);
+	spawnCloud(40, 6);
+	if(cX > 800) {
+		cX = 0;
+	}
+
+	cX += 0.5;
 // Hill
 	fill(hillColPic.color());
 	ellipse(30, 190, 500, 150);
@@ -74,4 +88,34 @@ function draw() {
 	fill(0);
 	rect(0, Height, width, 4);
 
+}
+
+function spawnCloud(y, n) {
+	// n is the cloud type number
+	let x = -100;
+	switch(n) {
+		case 1:
+			n = 500;
+			break
+		case 2:
+			n = 300;
+			break;
+		case 3:
+			n = 0;
+			break;
+		case 4:
+			n = -300;
+			break;
+		case 5:
+			n = -500;
+			break;
+		case 6:
+			n = -1000;
+			break;
+	}
+	noStroke();
+	fill(255);
+	ellipse(cX + n + x, y, 50);
+	ellipse(cX + n + x - 10, y + 10, 60, 25);
+	ellipse(cX + n + x + 20, y + 5, 40, 30);
 }
