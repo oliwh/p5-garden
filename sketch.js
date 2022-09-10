@@ -140,6 +140,7 @@ function spawnCloud(y, n) {
 
 function spawnShed(x,y) {
 // spawn shed at x, y
+// this works perfectly fine but it could probably be a lot more optimised
 	push();
 	shearX(-45);
 	fill(111, 77, 56); //#6f4d38
