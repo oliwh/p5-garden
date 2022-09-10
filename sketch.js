@@ -99,6 +99,9 @@ function draw() {
 	ellipse(230, Height - 50, 400, 110);
 	pop();
 	
+// Shed
+	spawnShed(600, Height - gY - 30);
+
 // Border
 	fill(0);
 	rect(0, Height, width, 4);
@@ -133,4 +136,36 @@ function spawnCloud(y, n) {
 	ellipse(cX + n + x, y, 50);
 	ellipse(cX + n + x - 10, y + 10, 60, 25);
 	ellipse(cX + n + x + 20, y + 5, 40, 30);
+}
+
+function spawnShed(x,y) {
+// spawn shed at x, y
+	push();
+	shearX(-45);
+	fill(111, 77, 56); //#6f4d38
+	rectMode(CENTER);
+	translate(x - 499.5, y - 295);
+	rect(x, y, 16, 50);
+	pop();
+	push();
+	fill(22, 38, 45) //#16262d
+	rect(x + 70, y - 50, 30, 100);
+	triangle(x + 70, y - 50, x + 100, y - 80, x + 100, y - 50);
+	rectMode(CENTER);
+	rect(x, y, 150, 100);
+	fill(119, 83, 60); //#77533c
+	rect(x - 70, y, 15, 100);
+	rect(x + 80, y, 15, 100);
+	fill(157, 155, 142); //#9d9b8e
+	translate(x, y);
+	shearX(-45);
+	rect(-43.5, -75, 138, 50);
+	pop();
+	push();
+	shearX(-45);
+	fill(111, 77, 56); //#6f4d38
+	rectMode(CENTER);
+	translate(x - 350, y - 295);
+	rect(x, y, 16, 50);
+	pop();
 }
