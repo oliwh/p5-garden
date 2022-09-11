@@ -1,6 +1,8 @@
 // Global variables
 let Height = 400;
 let cX = 0;
+let fX = 0;
+let f1 = 1;
 
 function setup() {
 	frameRate(30);
@@ -98,7 +100,22 @@ function draw() {
 	rotate(-3);
 	ellipse(230, Height - 50, 400, 110);
 	pop();
-	
+
+// Fish
+	spawnFish(100, Height - 40, -5, 1);
+	spawnFish(350, Height - 70, -2, -1);
+	if(fX > 300) {
+		f1 = 0;
+	}
+	else if(fX < 0) {
+		f1 = 1;
+	}
+	if(f1 == 1) {
+		fX += 1;
+	}
+	else if(f1 == 0) {
+		fX -= 1;
+	}
 // Shed
 	spawnShed(600, Height - gY - 30);
 
@@ -168,5 +185,20 @@ function spawnShed(x,y) {
 	rectMode(CENTER);
 	translate(x - 350, y - 295);
 	rect(x, y, 16, 50);
+	pop();
+}
+
+function spawnFish(x, y, a, d) {
+	push();
+	rotate(a);
+	translate(x + (fX * 0.75 * d), y);
+	fill(249, 145, 0); //#f99100
+	ellipse(0, 0, 30, 10);
+	if(f1 == 1) {
+	triangle(-5 * d, 0, -20 * d, -5 * d, -20 * d, 5 * d);
+	}
+	else {
+	triangle(5 * d, 0 * d, 20 * d, -5 * d, 20 * d, 5 * d);
+	}
 	pop();
 }
