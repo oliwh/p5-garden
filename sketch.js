@@ -53,6 +53,12 @@ function setup() {
 	// Description
 	textSize(16);
 	text('Pond', r2 + 70, Height + 70);
+// Fish colour picker
+	fishColPic = createColorPicker('#f99100');
+	fishColPic.position(r2, Height + 90);
+	// Description
+	textSize(16);
+	text('Fish', r2 + 70, Height + 110);
 
 }
 
@@ -194,7 +200,7 @@ function spawnFish(x, y, a, d) {
 	push();
 	rotate(a);
 	translate(x + (fX * 0.75 * d), y);
-	fill(249, 145, 0); //#f99100
+	fill(fishColPic.color());
 	ellipse(0, 0, 30, 10);
 	if(f1 == 1) {
 	triangle(-5 * d, 0, -20 * d, -5 * d, -20 * d, 5 * d);
