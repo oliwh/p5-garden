@@ -8,6 +8,7 @@ function setup() {
 	frameRate(30);
 	createCanvas(700, 600);
 	background(255);
+// Rows for colour pickers
 	let r1 = 0;
 	let r2 = 150;
 
@@ -100,6 +101,8 @@ function draw() {
 	rect(0, Height - gY - hY, width, hY);
 
 // Pond
+// Creates a pond with a slight angle
+// A function may have been better to use here but the pond will never be moved around so it isn't necessary
 	push();
 	angleMode(DEGREES);
 	rotate(-3);
@@ -112,6 +115,7 @@ function draw() {
 // Fish
 	spawnFish(100, Height - 40, -5, 1);
 	spawnFish(350, Height - 70, -2, -1);
+// Changes fish direction at a specified point
 	if(fX > 300) {
 		f1 = 0;
 	}
@@ -134,7 +138,8 @@ function draw() {
 }
 
 function spawnCloud(y, n) {
-	// n is the cloud type number
+	// n is the cloud number
+	// and is redefined as an offset for each cloud
 	let x = -100;
 	switch(n) {
 		case 1:
@@ -166,6 +171,7 @@ function spawnCloud(y, n) {
 function spawnShed(x,y) {
 // spawn shed at x, y
 // this works perfectly fine but it could probably be a lot more optimised
+	// creates left sloped beam
 	push();
 	shearX(-45);
 	fill(111, 77, 56); //#6f4d38
@@ -173,20 +179,24 @@ function spawnShed(x,y) {
 	translate(x - 499.5, y - 295);
 	rect(x, y, 16, 50);
 	pop();
+	// creates both sides
 	push();
 	fill(22, 38, 45) //#16262d
 	rect(x + 70, y - 50, 30, 100);
 	triangle(x + 70, y - 50, x + 100, y - 80, x + 100, y - 50);
 	rectMode(CENTER);
 	rect(x, y, 150, 100);
+	// creates vertical beams
 	fill(119, 83, 60); //#77533c
 	rect(x - 70, y, 15, 100);
 	rect(x + 80, y, 15, 100);
+	// creates roof
 	fill(157, 155, 142); //#9d9b8e
 	translate(x, y);
 	shearX(-45);
 	rect(-43.5, -75, 138, 50);
 	pop();
+	// creates right sloped beam
 	push();
 	shearX(-45);
 	fill(111, 77, 56); //#6f4d38
@@ -202,6 +212,8 @@ function spawnFish(x, y, a, d) {
 	translate(x + (fX * 0.75 * d), y);
 	fill(fishColPic.color());
 	ellipse(0, 0, 30, 10);
+	// depending on d (direction), reverses model of fish by changing side of triangle
+	// multiplied by d so that both fish face each other
 	if(f1 == 1) {
 	triangle(-5 * d, 0, -20 * d, -5 * d, -20 * d, 5 * d);
 	}
