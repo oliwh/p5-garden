@@ -6,11 +6,10 @@ My garden animation project written in p5.js
 
 Currently you can change the colour of each different part of the background. This will not be permanent and is for testing only
 
-## Planned Features
+## How to use
 
-These features are subject to change and not all will make it to the final product
+The quickest way of viewing this project is using the p5 editor at https://editor.p5js.org/Sneak2957/sketches/yvPo5_HV4
 
- - Fully complete animation of a garden
- - Ability to change time
- - Ability to change seasons
- - Ability to change weather
+Alternatively, if on linux, make sure you have tmux and the npm http server package installed,
+clone this repository, then run
+`./server.sh` and go to localhost:8080
