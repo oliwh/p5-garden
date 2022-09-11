@@ -95,9 +95,11 @@ function draw() {
 
 // Pond
 	push();
-	fill(pondColPic.color());
 	angleMode(DEGREES);
 	rotate(-3);
+	fill(95, 85, 56); //#5f5538
+	ellipse(230, Height - 55, 410, 115);
+	fill(pondColPic.color());
 	ellipse(230, Height - 50, 400, 110);
 	pop();
 
